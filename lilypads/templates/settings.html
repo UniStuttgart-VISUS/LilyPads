@@ -1,0 +1,39 @@
+<div class="modal-background" hidden>
+  <div class="modal settings">
+    <div class="settings__header">
+      <h1>Settings</h1>
+    </div>
+    <div class="settings__section">
+      <h2>Colour scale:</h2>
+      <div class="settings__color-picker-wrapper">
+          <input id="col1" class="color-picker" onchange="EntryPoint.get().onChange()" value="#000000" type="color">
+          <svg id="gradient"></svg>
+          <input id="col2" class="color-picker" onchange="EntryPoint.get().onChange()" value="#000000" type="color">
+      </div>
+    </div>
+    <div class="settings__section">
+      <h2>Units:</h2>
+      <select id="units-input">
+        <option value="metric">Metric</option>
+        <option value="imperial">Imperial</option>
+      </select>
+    </div>
+    <div class="settings__section">
+      <h2>Projection:</h2>
+      <select id="projection-input">
+        <option value="greatcircle">Great Circle</option>
+        <option value="equirectangular">Equirectangular</option>
+      </select>
+    </div>
+    <div class="settings__footer">
+      <button type="button" class="settings__button settings__button-cancel" onclick="EntryPoint.get().resetSettings()">
+        <i class="fa fa-times"></i>
+        Cancel
+      </button>
+      <button type="button" class="settings__button settings__button-save" onclick="EntryPoint.get().saveSettings()">
+        <i class="fa fa-save"></i>
+        Save changes
+      </button>
+    </div>
+  </div>
+</div>

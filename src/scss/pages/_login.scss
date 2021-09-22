@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the login page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/colors' as *;
+
+form {
+    border: 3px solid $bg-lightgray;
+    width: 40%;
+    max-width: 400px;
+    margin: auto;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid $fg-gray;
+    box-sizing: border-box;
+}
+
+button {
+  --clr-primary: #{$fg-white};
+  --clr-secondary: #{$bg-green};
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+footer {
+  width: 40%;
+  max-width: 400px;
+  margin: 2em auto;
+  border: 3px solid $bg-lightgray;
+  display: table;
+  padding: 0.5em;
+}
+
+.footer__left {
+  display: table-cell;
+}
+
+.footer__right {
+  display: table-cell;
+  text-align: right;
+}

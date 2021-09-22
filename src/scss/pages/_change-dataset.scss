@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the "change dataset" page.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/colors' as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 400px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.dataset-selector {
+  display: block;
+  color: unset;
+  text-decoration: unset;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &--active {
+    background: $bg-lightgray;
+
+    & > .dataset-selector__title::after {
+      content: ' (active)';
+      font-size: 0.5em;
+      font-weight: 100;
+      color: $fg-darkgray;
+    }
+  }
+
+  &__title {
+    margin-top: 0px;
+  }
+}
+
+.header {
+  padding-bottom: 2rem;
+}
+
+.dsgvo {
+  margin-top: 4rem;
+  padding: 0.5rem 2rem;
+  display: table;
+  width: calc(100% - 4rem);
+
+
+  &__link {
+    text-decoration: none;
+    color: $fg-unistuttgart;
+    display: table-cell;
+    font-size: 0.8rem;
+
+    &--right {
+      text-align: right;
+    }
+
+    &:visited {
+      color: $fg-unistuttgart;
+    }
+  }
+}

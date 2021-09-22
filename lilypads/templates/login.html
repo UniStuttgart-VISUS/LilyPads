@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('get_login_styles') }}" />
+    <link rel="icon" href="{{ url_for('get_static_file', path='images/favicon.png') }}" type="image/png" />
+  </head>
+  <body>
+    <form action="{{ url_for('login') }}" method="post" enctype="multipart/form-data">
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert--{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </form>
+    <footer>
+      <a href="{{ url_for('get_static_file', path='impressum.html') }}" class="footer__left">
+        Impressum
+      </a>
+      <a href="{{ url_for('get_static_file', path='datenschutz.html') }}" class="footer__right">
+        Datenschutzerklärung
+      </a>
+    </footer>
+  </body>
+</html>

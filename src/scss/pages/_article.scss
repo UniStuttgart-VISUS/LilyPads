@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the article page
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/colors' as *;
+
+div.outer {
+    position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.titles {
+    height: 50px;
+    top: 20px;
+    text-align: center;
+    background-color: rgba(40, 40, 220, 0.1);
+}
+
+div#date {
+    position: absolute;
+    width: 20%;
+    left: 1em;
+    top: 1em;
+    text-align: left;
+    font-weight: bold;
+}
+
+div#location {
+    position: absolute;
+    width: 20%;
+    right: 1em;
+    top: 1em;
+    text-align: right;
+    font-weight: bold;
+}
+
+div#newspaper {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: 1em;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+div#map {
+    height: 200px;
+    top: 1em;
+}

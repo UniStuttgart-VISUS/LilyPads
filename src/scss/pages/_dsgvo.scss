@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the "Impressum" and
+// "Datenschutz pages.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/colors' as *;
+
+.content, footer {
+  max-width: 900px;
+  width: calc(100vw - 4em);
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2em;
+  padding: 2rem 1rem;
+  background: $fg-unistuttgart;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: $fg-unistuttgart;
+}
+
+table {
+  margin: auto;
+  min-width: 50%;
+  padding-top: 1rem;
+}
+
+.td-first {
+  font-weight: 800;
+}
+
+.footer__ref {
+  float: right;
+  vertical-align: middle;
+  margin: 0 1rem;
+}
+
+.footer__text {
+  vertical-align: middle;
+  margin: 0 1rem;
+}

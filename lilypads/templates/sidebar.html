@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <div class="sidebar__top">
+    <div class="back-button" id="back-button"></div>
+    <div class="counter" id="counter"></div>
+    <div class="open-settings-button-div" id="settings-button-div">
+      <button class="frameless open-settings-button" onclick="EntryPoint.get().openSettings()">
+        <i class="fa fa-cog"></i>
+      </button>
+    </div>
+  </div>
+  <div class="sidebar__documents-svg bordered" id="small-multiples">
+    <canvas id="background"></canvas>
+    <canvas id="brushed"></canvas>
+    <canvas id="frame"></canvas>
+  </div>
+  <div class="sidebar__documents-controls bordered" id="buttons">
+   <input id="Index" type="radio" name="sort-options" autocomplete="off">
+   <label class="button-label" for="Index">
+    <i class="fa fa-sort-numeric-asc"></i>
+    Index
+   </label>
+   <input id="Date" type="radio" name="sort-options" autocomplete="off">
+   <label class="button-label" for="Date">
+    <i class="fa fa-sort-numeric-asc"></i>
+    Date
+   </label>
+   <input id="Location" type="radio" name="sort-options" autocomplete="off">
+   <label class="button-label" for="Location">
+    <i class="fa fa-sort-alpha-asc"></i>
+    Location
+   </label>
+  </div>
+  <div class="sidebar__documents-table bordered" id="result-list"></div>
+  <div class="sidebar__languages bordered">
+    {% include "language_selection.html" %}
+  </div>
+  <div class="sidebar__origin">
+    <div class="origin bordered">
+      <span class="origin__title">Origin:</span>
+      <span class="origin__coordinates" id="origin"></span>
+    </div>
+    <div id="origin-map-div" class="sidebar__origin-map-div"></div>
+  </div>
+</div>

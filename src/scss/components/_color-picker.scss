@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the color picker component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+svg#gradient {
+  height: 30px;
+  width: 100%;
+}
+
+input.color-picker {
+  border: none;
+  padding: 0px;
+  height: 30px;
+  width: 100%;
+  min-width: 30px;
+
+  &#col1 {
+    padding-right: 2px;
+  }
+
+  &#col2 {
+    padding-left: 2px;
+  }
+
+  &:hover {
+    padding: 2px;
+  }
+}

@@ -1,0 +1,131 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+button {
+  --clr-primary: #{$fg-white};
+  --clr-secondary: #{$bg-black};
+
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+    box-shadow: 0 0 0 3px var(--clr-secondary);
+  }
+
+  &.frameless {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: none;
+  }
+
+  &.logout,
+  &.btn-small {
+    font-size: xx-small;
+    border: none;
+    box-shadow: none;
+    width: unset;
+    margin: unset;
+  }
+
+  &.logout {
+    background-color: $bg-gray;
+    border-radius: 2px;
+    padding: 1px 3px;
+
+    &:hover {
+      background-color: $bg-darkred;
+      color: $fg-white;
+    }
+  }
+
+  &.btn-small {
+    border-radius: 0;
+    padding: 0;
+  }
+
+  &.btn-link {
+    color: $fg-blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $fg-darkblue;
+      text-decoration: none;
+    }
+
+    &:disabled {
+      color: $fg-darkgray;
+    }
+  }
+
+  &.open-settings-button {
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    &--open {
+      -webkit-animation:spin 4s linear infinite;
+      animation:spin 4s linear infinite;
+    }
+  }
+
+  &.settings__button {
+    border: none;
+    border-radius: 4px;
+    color: $fg-white;
+    background: $fg-blue;
+    font-size: 1.1rem;
+    padding: 10px 0;
+
+    &-save {
+      justify-content: right;
+      background: $fg-darkblue;
+    }
+
+    &-cancel {
+      justify-content: left;
+    }
+  }
+}
+
+.button-label {
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 3px;
+  background: $fg-gray;
+  font-size: x-small;
+  text-align: center;
+}
+
+input:checked + .button-label {
+  background: #3456de;
+  color: white;
+  font-weight: 700;
+}
+
+.back-button,
+.open-settings-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    font-size: large;
+    color: $fg-white;
+    background: none;
+    padding: 2px 4px;
+    margin: 0;
+
+    &:hover {
+      background: none;
+      box-shadow: none;
+    }
+  }
+}

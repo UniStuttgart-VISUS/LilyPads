@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive visualization of documents with geo-spatial and temporal metadata.">
+    <meta name="author" content="Max Franke <Max.Franke@vis.uni-stuttgart.de>">
+
+    <link rel="stylesheet" href="{{ url_for('get_static_file', path='visualization.css') }}" type="text/css"/>
+
+    <link rel="icon" href="{{ url_for('get_static_file', path='images/favicon.png') }}" type="image/png" />
+    <script src="{{ url_for('get_javascript', path='bundle.js') }}" defer></script>
+  </head>
+  <body>
+    <!-- MAIN PAGE -->
+    {% include "user_status_row.html" %}
+    <div class="content">
+      {% include "sidebar.html" %}
+      <div id="map-div" class="map-div">
+        {% include "drilldown_row.html" %}
+      </div>
+    </div>
+    {% include "settings.html" %}
+  </body>
+</html>

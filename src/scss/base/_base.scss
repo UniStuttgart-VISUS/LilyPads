@@ -1,0 +1,12 @@
+@use '../abstracts/colors' as *;
+
+// basic styling for links
+a {
+  color: $fg-darkblue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

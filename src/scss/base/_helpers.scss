@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+.hidden {
+  display: none;
+}
+
+.shadow {
+  box-shadow: 0 0 5px $clr-dropshadow;
+
+  &--lg {
+    box-shadow: 0 0 15px $clr-dropshadow;
+  }
+
+  &--sm {
+    box-shadow: 0 0 1px $clr-dropshadow;
+  }
+}
+
+.bordered {
+  border: 1px solid $fg-gray;
+}
+
+.padded {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.tight {
+  margin: 0;
+  padding: 0;
+}
+
+.offset {
+  padding-left: 1.2em;
+}

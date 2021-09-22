@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the alert component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+.alert {
+  --clr-fg: #{$fg-black};
+  --clr-bg: #{rgba($fg-black, 0.2)};
+
+  font-size: 1rem;
+  background: var(--clr-bg);
+  color: var(--clr-fg);
+  padding: 0.3em 1em;
+  border-radius: 0.3em;
+  border: 1px solid var(--clr-fg);
+  margin: 0.5em 0;
+
+  &--success {
+    --clr-fg: #{$bg-green};
+    --clr-bg: #{rgba($bg-green, 0.2)};
+  }
+
+  &--warning {
+    --clr-fg: #{$fg-yellow};
+    --clr-bg: #{rgba($fg-yellow, 0.2)};
+  }
+
+  &--danger {
+    --clr-fg: #{$fg-red};
+    --clr-bg: #{rgba($fg-red, 0.2)};
+  }
+}

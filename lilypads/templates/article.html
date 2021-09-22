@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>{{article.date}}, {{article.location}}, {{article.newspaper}}</title>
+    <link rel="icon" href="{{ url_for('get_static_file', path='images/favicon.png') }}" type="image/png" />
+    <link rel="stylesheet" href="{{ url_for('get_static_file', path='article.css') }}" type="text/css"/>
+    <!-- DOWNLOADED EXTERNAL -->
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="titles">
+        <div id="date">{{article.date}}</div>
+        <div id="location">{{article.location}}</div>
+        <div id="newspaper"><a href="{{article.url}}">{{article.newspaper}}</a></div>
+      </div>
+      <hr />
+      <div id="article" class="article-text">
+        {{article.text}}
+      </div>
+      <div id="map"></div>
+    </div>
+    <script>
+      const geolocation = JSON.parse({{article.coords|safe|tojson}});
+      const map = L.map('map').setView(geolocation, 5);
+      const marker = L.marker(geolocation).addTo(map);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+      }).addTo(map);
+    </script>
+  </body>
+</html>

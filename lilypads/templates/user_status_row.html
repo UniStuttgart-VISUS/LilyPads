@@ -1,0 +1,31 @@
+<div id="user-management-row">
+  <div id="login-name" class="float-right ml-auto">
+    Logged in as <span class="user-name">{{username}}</span>.
+    <form id="impressum-form" class="hidden" action="{{ url_for('dsgvo_impressum') }}" method="get"></form>
+    <button id="impressum-button" class="btn-small frameless btn-link" type="submit" form="impressum-form">
+      <i class="fa fa-info-circle"></i>
+      Impressum
+    </button>
+    <form id="datenschutz-form" class="hidden" action="{{ url_for('dsgvo_datenschutz') }}" method="get"></form>
+    <button id="datenschutz-button" class="btn-small frameless btn-link" type="submit" form="datenschutz-form">
+      <i class="fa fa-shield"></i>
+      Datenschutzerklärung
+    </button>
+    <form id="dataset-change-form" class="hidden" action="{{ url_for('change_dataset_site') }}" method="get"></form>
+    <button id="dataset-change-button" class="btn-small frameless btn-link" type="submit" form="dataset-change-form">
+      <i class="fa fa-database"></i>
+      Change dataset.
+    </button>
+    <form id="password-change-form" class="hidden" method="get" action="{{ url_for('get_password_change_page') }}"></form>
+    <button id="password-change-button" class="btn-small frameless btn-link" type="submit" form="password-change-form">
+      <i class="fa fa-pencil-square-o"></i>
+      Change password.
+    </button>
+    <form id="logout-form" method="get" action="{{ url_for('logout') }}" style="display: none"></form>
+    <button id="logout-button" class="logout" type="submit" form="logout-form">
+      <i class="fa fa-sign-out"></i>
+      Logout
+    </button>
+  </div>
+</div>
+

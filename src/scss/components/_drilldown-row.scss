@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the drilldown component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+div#drilldown-stack-row {
+  font-size: x-small;
+  padding: 0em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: 0px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 3000;
+  background: white;
+}
+
+.drilldown-row-element {
+  &__caret {
+    color: $fg-darkgray;
+  }
+
+  &__text {
+    color: $fg-black;
+
+
+    &--current {
+      font-weight: 800;
+    }
+  }
+
+  &__link {
+    color: $fg-blue;
+
+
+    &:hover {
+      color: $fg-darkblue;
+    }
+
+    &--overshot {
+      opacity: 0.65;
+      font-style: italic;
+    }
+  }
+}

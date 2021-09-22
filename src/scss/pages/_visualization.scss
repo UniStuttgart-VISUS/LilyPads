@@ -1,0 +1,126 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the visualization page
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/colors' as *;
+
+*, *::before, *::after {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+
+  &:not(i::before):not(i::after) {
+    cursor: default;
+  }
+}
+
+:root {
+  background: $bg-white;
+}
+
+.sidebar {
+  position: relative;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto auto auto auto 1fr auto auto;
+
+  &__top {
+    height: 50px;
+    background-color: $fg-darkblue;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  &__documents-svg {
+    box-sizing: border-box;
+    max-height: 100px;
+    height: 100px;
+    width: 100%;
+    position: relative;
+
+    canvas {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__languages {
+    padding: 5px 0px;
+  }
+
+  &__documents-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 0px 5px;
+    box-sizing: border-box;
+
+    input {
+      display: none;
+    }
+  }
+
+  &__documents-table {
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+
+  &__origin-map-div {
+    width: 100%;
+    height: 200px;
+  }
+
+  .origin {
+    display: grid;
+    grid-template-columns: max-content auto;
+    padding: 4px 1em;
+    box-sizing: border-box;
+
+    &__coordinates {
+      font-size: small;
+      color: $fg-darkgray;
+      text-align: right;
+    }
+  }
+}
+
+.flag--inactive {
+  opacity: 0.5;
+}
+
+.language__identifier-iso-639-3 {
+  font-size: 10px;
+}
+
+.map-div {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+}
+
+div#user-management-row {
+  font-size: xx-small;
+  padding: 0em;
+  padding-left: 0.5em;
+  margin: 0px;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  z-index: 3000;
+  background: $bg-white;
+  border: 1px solid $fg-gray;
+}
+
+.user-name {
+  color: #020b19;
+  font-weight: bold;
+}

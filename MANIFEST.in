@@ -1,0 +1,7 @@
+graft lilypads
+global-exclude *.pyc
+global-exclude .gitignore
+exclude lilypads/data/*.txt
+exclude lilypads/data/*.csv
+exclude lilypads/data/*.json
+exclude lilypads/data/*.py

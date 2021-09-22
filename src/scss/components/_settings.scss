@@ -1,0 +1,80 @@
+@use '../abstracts/colors' as *;
+
+
+.modal-background {
+  position: absolute;
+  z-index: 7000;
+  background: rgba(0,0,0,0.3);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.modal {
+  z-index: 7001;
+  width: 400px;
+  right: calc(50vw - 50%);
+  top: calc(50vh - 50%);
+  background: $fg-white;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 0 20px -10px rgba(0,0,0,0.3);
+}
+
+.settings {
+  &__header {
+    height: 2rem;
+    background: DarkBlue;
+    color: white;
+    padding: 1rem;
+    margin-top: -1rem;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px 10px 0 0;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+
+  &__section {
+    padding-bottom: 1rem;
+  }
+
+  &__color-picker-wrapper {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+  }
+
+  &__footer {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+  }
+}
+
+select#projection-input {
+  width: 100%;
+  background: none;
+}
+
+select#units-input {
+  width: 100%;
+  background: none;
+}

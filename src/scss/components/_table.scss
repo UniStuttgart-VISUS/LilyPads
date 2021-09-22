@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the table component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/colors' as *;
+
+.fixed-header {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: xx-small;
+  margin: 0px;
+  padding: 0px;
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: table-row-group;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  thead {
+    background: black;
+    color: white;
+  }
+
+  th,
+  td {
+    padding: 1px;
+    text-align: left;
+    border-bottom: 1px solid $fg-gray;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  td:first-of-type {
+    padding-left: 1em;
+  }
+
+  td:nth-child(3) {
+    width: 100%;
+  }
+}
