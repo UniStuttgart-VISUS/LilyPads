@@ -78,11 +78,11 @@ export default class ArticleTable {
       .html(function(d) { return d.value; });
 
     let ref = this;
-    rows.on('mouseenter', function(datum) {
+    rows.on('mouseenter', function(_, datum) {
       ref._dispatcher.dispatch([datum]);
-    }).on('mouseleave', function(datum) {
+    }).on('mouseleave', function(_, datum) {
       ref._dispatcher.dispatch([]);
-    }).on('click', function(datum) {
+    }).on('click', function(_, datum) {
       window.open('./api/articles/' + ref._corpus + '/' + datum.Index);
     });
 

@@ -176,20 +176,20 @@ export default class HistogramBar {
 
     // events
     let ref = this;
-    this._root.on("mouseover", function() {
-      d3.event.stopPropagation();
+    this._root.on("mouseover", function(event) {
+      event.stopPropagation();
       ref._dispatcher.brushWithSelections(ref._root);
-    }).on("mouseleave", function() {
-      d3.event.stopPropagation();
+    }).on("mouseleave", function(event) {
+      event.stopPropagation();
       ref._dispatcher.dispatch([]);
-    }).on("click", function() {
-      if (d3.event.button == 0) {
-        d3.event.stopPropagation();
+    }).on("click", function(event) {
+      if (event.button == 0) {
+        event.stopPropagation();
         ref._dispatcher.restartWithSelections(ref._root);
       }
-    }).on('contextmenu', function() {
-      d3.event.preventDefault();
-      d3.event.stopPropagation();
+    }).on('contextmenu', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
       ref._root.classed("selected", !ref._root.classed("selected"));
     });
   }

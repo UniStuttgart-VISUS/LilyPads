@@ -152,10 +152,7 @@ export default class RadialHistogram {
         const place_id_to_inset = ref.createInsets(clusters, max_per_cluster_and_date, max_per_cluster);
 
         // create bars
-        return ref.createBars(place_id_to_inset).then((errstate) => {
-          if (errstate) {
-            reject('Layout cancelled.');
-          }
+        return ref.createBars(place_id_to_inset).then(_ => {
           // create splines
           ref.createSplines(max_per_cluster_and_date);
 
@@ -164,7 +161,7 @@ export default class RadialHistogram {
         });
       })
       .then(ref.onEndLayout.bind(ref))
-      .then(() => resolve())
+      .then(() => resolve(void 0))
       .catch(console.error);
     });
   }

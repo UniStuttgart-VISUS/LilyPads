@@ -6,9 +6,11 @@
         "sourceMap": true,
         "lib": ["es6", "es2018", "dom"],
         "outDir": "./dist",
-        "module": "es6",
-        "target": "es5",
-        "allowJs": true
+        "module": "esnext",
+        "target": "esnext",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node"
     },
     "include": [
         "src/"

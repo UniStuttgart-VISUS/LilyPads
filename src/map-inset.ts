@@ -132,12 +132,12 @@ export class MapInset {
       ref.dispatcher.dispatch(ref.local_data);
     }).on("mouseleave", function() {
       ref.dispatcher.dispatch([]);
-    }).on("click", function() {
-      if (d3.event.button == 0) {
+    }).on("click", function(event) {
+      if (event.button == 0) {
         ref.dispatcher.restartWithSelections(ref.totalGroup);
       }
-    }).on('contextmenu', function() {
-      d3.event.preventDefault();
+    }).on('contextmenu', function(event) {
+      event.preventDefault();
       ref.totalGroup.classed("selected", !ref.totalGroup.classed("selected"));
     });
 
@@ -379,7 +379,7 @@ export class MapInset {
       .attr('d', arc);
 
     // create readability indicators
-    const line = d3.line();
+    const line = d3.line<[number, number]>();
     const arrow_tip_offset_px = 5;
     const arrow_tip_offset = arrow_tip_offset_px / (0.5 * this.radius + 50);
     const indicator_data = [
@@ -422,8 +422,8 @@ export class MapInset {
       ]
     ];
 
-    let sel = this.totalGroup.selectAll<SVGPathElement, [number, number][]>('.readability-indicator')
-      .data(indicator_data);
+    let sel: d3.Selection<SVGPathElement, [number, number][], any, any> = this.totalGroup.selectAll<SVGPathElement, [number, number][]>('.readability-indicator')
+      .data(indicator_data as Array<Array<[number, number]>>);
     sel.enter()
       .append('path')
       .classed('readability-indicator', true)

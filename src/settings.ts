@@ -65,7 +65,7 @@ function setSettingsInternal(settings: {}) : Promise<any> {
     }
 
     window.localStorage.setItem(LILYPADS_SETTINGS_KEY, JSON.stringify(s));
-    resolve();
+    resolve(void 0);
   });
 }
 
@@ -178,8 +178,8 @@ export function initMap(settings, restart_cb, reset_cb): void {
   });
 
   d3.select('.modal-background')
-    .on('click', function() {
-      if (d3.event && d3.event.target === this) {
+    .on('click', function(event) {
+      if (event && event.target === this) {
         reset_cb();
       }
     });

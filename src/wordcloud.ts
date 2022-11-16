@@ -112,7 +112,7 @@ export default class WordCloud {
     const articles = words.map(d => d.articles)
       .map(d => ref._data.filter(e => d.includes(e.Index)));
     ref._rootSelection
-      .selectAll("text")
+      .selectAll<SVGTextElement, any>("text")
     .data(articles)
       .enter().append("text")
       .html((_, i) => words[i].text
@@ -126,20 +126,20 @@ export default class WordCloud {
         return "translate(" + [words[i].x, words[i].y] + ")rotate(" + words[i].rotate + ")";
       })
       .attr("description", (_, i) => "\"" + words[i].text + "\"")
-      .on("click", function(_, i) {
-        if (d3.event.button == 0) {
+      .on("click", function(this: SVGTextElement, event: MouseEvent) {
+        if (event.button == 0) {
           ref._dispatcher.restartWithSelections(d3.select(this) as d3.Selection<SVGTextElement, any, any, any>);
         }
       })
-      .on("mouseenter", function(d) {
+      .on("mouseenter", function(_, d) {
         ref._dispatcher.brushWithSelections(d3.select(this) as d3.Selection<SVGTextElement, any, any, any>);
         d3.select(this).style('font-weight', 'bold');
       })
-      .on("mouseleave", function(d) {
+      .on("mouseleave", function(_, d) {
         // remove brush
         ref._dispatcher.dispatch([]);
-      }).on('contextmenu', function() {
-        d3.event.preventDefault();
+      }).on('contextmenu', function(event) {
+        event.preventDefault();
         let t = d3.select(this);
         t.classed("selected", !t.classed("selected"));
       })

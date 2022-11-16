@@ -301,20 +301,20 @@ export default class LanguageBar {
         sel.append('title')
           .text(`${d.key}: ${d.value} article${d.value !== 1 ? 's' : ''}`);
       })
-      .on('click', function(d) {
-        if (d3.event.button == 0) {
+      .on('click', function(event, d) {
+        if (event.button == 0) {
           ref._dispatcher.restartWithSelections(d3.select(this) as d3.Selection<SVGGElement, any, any, any>);
         }
       })
-      .on('contextmenu', function() {
-        d3.event.preventDefault();
+      .on('contextmenu', function(event) {
+        event.preventDefault();
         const t = d3.select(this);
         t.classed('selected', !t.classed('selected'));
       })
-      .on('mouseenter', function(d) {
+      .on('mouseenter', function(_, d) {
         ref._dispatcher.brushWithSelections(d3.select(this) as d3.Selection<SVGGElement, any, any, any>);
       })
-      .on('mouseleave', function(d) {
+      .on('mouseleave', function(_, d) {
         ref._dispatcher.dispatch([]);
       });
   }
